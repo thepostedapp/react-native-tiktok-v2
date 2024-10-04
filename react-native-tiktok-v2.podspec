@@ -38,7 +38,8 @@ Pod::Spec.new do |s|
    end
   end
 
-  s.dependency "TikTokOpenSDKCore", '>= 2.5.0'
-  s.dependency "TikTokOpenAuthSDK", '>= 2.5.0'
-  s.dependency "TikTokOpenShareSDK", '>= 2.5.0'
+ # Use dependencies from the TikTok OpenSDK repository directly
+ s.dependency "TikTokOpenSDKCore", :git => "https://github.com/tiktok/tiktok-opensdk-ios.git", :tag => "v2.5.0"
+ s.dependency "TikTokOpenAuthSDK", :git => "https://github.com/tiktok/tiktok-opensdk-ios.git", :tag => "v2.5.0"
+ s.dependency "TikTokOpenShareSDK", :git => "https://github.com/tiktok/tiktok-opensdk-ios.git", :tag => "v2.5.0"
 end

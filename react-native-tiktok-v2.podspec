@@ -38,7 +38,7 @@ Pod::Spec.new do |s|
    end
   end
 
-  s.dependency "TikTokOpenSDKCore"
-  s.dependency "TikTokOpenAuthSDK"
-  s.dependency "TikTokOpenShareSDK"
+  s.dependency "TikTokOpenSDKCore", '>= 2.5.0'
+  s.dependency "TikTokOpenAuthSDK", '>= 2.5.0'
+  s.dependency "TikTokOpenShareSDK", '>= 2.5.0'
 end

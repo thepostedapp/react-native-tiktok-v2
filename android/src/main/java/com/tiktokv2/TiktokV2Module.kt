@@ -67,9 +67,11 @@ class TiktokV2Module(reactContext: ReactApplicationContext) :
   override fun onNewIntent(intent: Intent?) {
       if (this::authApi.isInitialized) {
         this.authApi.getAuthResponseFromIntent(intent, this.redirectUri)?.let {
+          val authCode = it.authCode?.takeIf { code -> code.isNotBlank() }
+                ?: intent?.data?.getQueryParameter("code") // Fallback to query parameter "code"
           val result: WritableMap = Arguments.createMap()
           result.putInt("errorCode", it.errorCode)
-          result.putString("authCode", it.authCode)
+          result.putString("authCode", authCode ?: "")
           result.putString("codeVerifier", this.codeVerifier)
           result.putString("errorMsg", it.authErrorDescription)
 
